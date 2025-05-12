@@ -1,2 +1,7 @@
-# calculator-app
-A calculator app made in HTML, CSS &amp; JS
+# Calculator App
+A simple calculator made in HTML, CSS & JS
+
+Made by 7Zeb
+
+## New Features and Changes
+- Created repository
