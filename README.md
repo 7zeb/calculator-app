@@ -7,3 +7,7 @@ This program is a practice course I took.
 
 ## New Features and Changes
 - Created repository
+- Made CSS
+- Made HTML
+- Made JS
+- New UI for the Calculator App
