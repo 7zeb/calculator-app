@@ -1,15 +1,10 @@
-//this JavaScript file makes the calculator function
-
-//global variables
 let currentInput = '';
 let currentOperation = '';
 let previousInput = '';
 
-
-
 function appendNumber(number) {
-  currentInput = number;
-  document.getElementById('display').value = '${previousInput} ${currentOperation} ${currentInput}';
+    currentInput += number;
+    document.getElementById('display').value = `${previousInput} ${currentOperation} ${currentInput}`;
 }
 
 function appendOperation(operation) {
@@ -23,7 +18,6 @@ function appendOperation(operation) {
     document.getElementById('display').value = `${previousInput} ${currentOperation}`;
 }
 
-//this function will actually do the calculations (math)
 function calculate() {
     if (previousInput === '' || currentInput === '') return;
     let result;
