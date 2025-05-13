@@ -13,11 +13,10 @@ A simple calculator made in HTML, CSS & JS
 Made by 7Zeb
 
 
-## New Features and Changes
-- Created repository
-- Made CSS
-- Made HTML
-- Made JS
-- New UI for the Calculator App
+## Features
+- Clean UI
+- Hover Effect for buttons
+- Clear Button
 - Copy Function
 - Keyboard Navigation
+- Negative Number Support (still in development)
