@@ -58,16 +58,20 @@ function clearDisplay() {
     document.getElementById('display').value = '';
 }
 
-//new feature in Release 5: copy button
-document.getElementById("copyBtn").addEventListener("click", function() {
-    const display = document.getElementById("display").value; // Get the calculator result
-    if (display.trim() !== "") { // Ensure it's not empty
-        navigator.clipboard.writeText(display).then(() => {
-            alert("Copied to clipboard!"); // You can replace this with a custom notification if needed
-        }).catch(err => {
-            console.error("Failed to copy:", err);
-        });
-    } else {
-        alert("Nothing to copy!"); // Prevent empty clipboard copies
-    }
+// New Feature in Release 5: Copy Button
+document.addEventListener("DOMContentLoaded", function() { // Ensures the DOM is fully loaded before running
+    document.getElementById("copyBtn").addEventListener("click", function() {
+        const displayElement = document.getElementById("display"); // Get the display element
+        const displayValue = displayElement.value.trim(); // Ensure it's grabbing the correct value
+
+        if (displayValue !== "") {
+            navigator.clipboard.writeText(displayValue).then(() => {
+                alert("Copied to clipboard!"); // You can replace this with a custom notification if needed
+            }).catch(err => {
+                console.error("Failed to copy:", err);
+            });
+        } else {
+            alert("Nothing to copy!"); // Prevent empty clipboard copies
+        }
+    });
 });
