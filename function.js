@@ -77,3 +77,21 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+//making keyboard work (Release 6)
+document.addEventListener("keydown", function(event) {
+    const key = event.key;
+
+    if (!isNaN(key)) { // If the key is a number
+        appendNumber(key);
+    } else if (["+","-","*","/"].includes(key)) { // If the key is an operator
+        appendOperation(key);
+    } else if (key === "Enter") { // If Enter is pressed, calculate
+        calculate();
+    } else if (key === "Backspace") { // Remove last character
+        currentInput = currentInput.slice(0, -1);
+        document.getElementById('display').value = `${previousInput} ${currentOperation} ${currentInput}`;
+    } else if (key.toLowerCase() === "c") { // Make "C" key clear the display
+    clearDisplay();
+}
+});
