@@ -57,3 +57,17 @@ function clearDisplay() {
     currentOperation = '';
     document.getElementById('display').value = '';
 }
+
+//new feature in Release 5: copy button
+document.getElementById("copyBtn").addEventListener("click", function() {
+    const display = document.getElementById("display").value; // Get the calculator result
+    if (display.trim() !== "") { // Ensure it's not empty
+        navigator.clipboard.writeText(display).then(() => {
+            alert("Copied to clipboard!"); // You can replace this with a custom notification if needed
+        }).catch(err => {
+            console.error("Failed to copy:", err);
+        });
+    } else {
+        alert("Nothing to copy!"); // Prevent empty clipboard copies
+    }
+});
