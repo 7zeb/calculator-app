@@ -59,15 +59,17 @@ function clearDisplay() {
 }
 
 // New Feature in Release 5: Copy Button
-document.addEventListener("DOMContentLoaded", function() { // Ensures the DOM is fully loaded before running
+document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("copyBtn").addEventListener("click", function() {
-        const displayElement = document.getElementById("display"); // Get the display element
-        const displayValue = displayElement.value.trim(); // Ensure it's grabbing the correct value
+        const displayElement = document.getElementById("display"); // Get the display field
+        const displayValue = displayElement.value.trim(); // Get its actual contents
 
         if (displayValue !== "") {
-            navigator.clipboard.writeText(displayValue).then(() => {
-                alert("Copied to clipboard!"); // You can replace this with a custom notification if needed
-            }).catch(err => {
+            navigator.clipboard.writeText(displayValue)
+            .then(() => {
+                alert("Copied: " + displayValue); // Shows what was copied
+            })
+            .catch(err => {
                 console.error("Failed to copy:", err);
             });
         } else {
